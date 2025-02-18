@@ -9,11 +9,11 @@ export const Header: React.FC = () => {
   const { user, isAuthenticated, login, logout } = useAuth();
 
   const isActive = (path: string) => {
-    return location.pathname === path ? 'text-indigo-200' : 'text-white hover:text-indigo-200';
+    return location.pathname === path ? 'text-primary-200' : 'text-white hover:text-primary-200';
   };
 
   return (
-    <header className="bg-indigo-600 text-white shadow-lg">
+    <header className="bg-primary-600 text-white shadow-lg">
       <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-3">
@@ -37,11 +37,11 @@ export const Header: React.FC = () => {
             <div className="relative">
               {isAuthenticated ? (
                 <Menu as="div" className="relative inline-block text-left">
-                  <Menu.Button className="flex items-center space-x-2 hover:text-indigo-200">
+                  <Menu.Button className="flex items-center space-x-2 hover:text-primary-200">
                     <img
                       src={user?.avatarUrl}
                       alt={user?.fullName}
-                      className="w-8 h-8 rounded-full bg-indigo-200"
+                      className="w-8 h-8 rounded-full bg-primary-200"
                     />
                   </Menu.Button>
                   <Transition
@@ -80,7 +80,7 @@ export const Header: React.FC = () => {
               ) : (
                 <button
                   onClick={() => login()}
-                  className="flex items-center space-x-2 hover:text-indigo-200"
+                  className="flex items-center space-x-2 hover:text-primary-200"
                 >
                   <LogIn className="h-6 w-6" />
                   <span className="hidden md:inline">Sign In</span>
